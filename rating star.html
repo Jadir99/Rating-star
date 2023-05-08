@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rating Star</title>
+	<!-- Load Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+	<div class="container">
+		<h2>Rating Star</h2>
+		<p>Click on a star to rate:</p>
+		<!-- <span class="far fa-star text-warning " id="star1" onclick="rate(1)"></span> -->
+        
+        <span class="far fa-star text-warning "id="star1" onclick="rate(1)"></span> 
+		<span class="far fa-star text-warning " id="star2" onclick="rate(2)"></span>
+		<span class="far fa-star text-warning " id="star3" onclick="rate(3)"></span>
+		<span class="far fa-star text-warning " id="star4" onclick="rate(4)"></span>
+		<span class="far fa-star text-warning " id="star5" onclick="rate(5)"></span>
+		<p>Your rating is: <span id="rating"></span></p>
+	</div>
+
+	<!-- Load Bootstrap JS and jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+	<script>
+		// Define a function to handle rating
+		function rate(star) {
+			for (var i = 1; i <= 5; i++) {
+				if (i <= star) {
+					$('#star' + i).removeClass('far fa-star text-warning').addClass('fa fa-star text-warning');
+				} else {
+					$('#star' + i).removeClass('fa fa-star text-warning').addClass('far fa-star text-warning');
+				}
+			}
+			// Set the rating value as 20% per star
+			var rating = star * 20;
+			// Update the rating display
+			$('#rating').text(rating + '%');
+		}
+	</script>
+
+</body>
+</html>
